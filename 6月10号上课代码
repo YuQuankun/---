@@ -1,0 +1,25 @@
+class Something:public Bigthing{
+	const Otherthing ot;//表示ot对象不能修改，常量对象只能调用常量函数，其实如果调用了修改的函数，那个不就是发生修改了吗？与const ot发生矛盾。 
+	static int x;
+  Something(){	
+		}
+	Something(int n):Bigthing(n),ot(n){	
+		}//将构造函数声明为私有
+	public:
+		~Something(){
+		}
+		virtual void show() const{	
+		}
+		virtual void show(){
+			
+		} 
+    static Something* create(int n){
+    return new Something(n);
+    }//提供了构造的方法
+}; 
+int main(int argc, char** argv){
+	Something *st=Something::create(123),*st1=Something::create(321);//考点，调用的是哪个构造函数 
+	st.show();//是哪一个类的show()函数
+	st1.show();
+	return 0;
+}
