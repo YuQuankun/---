@@ -1,3 +1,6 @@
+#include <iostream>
+using namespace std;//命名空间控制范围。
+namepsace myspace{
 class Something:public Bigthing{
 	const Otherthing ot;//表示ot对象不能修改，常量对象只能调用常量函数，其实如果调用了修改的函数，那个不就是发生修改了吗？与const ot发生矛盾。 
 	static int x;
@@ -16,8 +19,9 @@ class Something:public Bigthing{
     return new Something(n);
     }//提供了构造的方法，可以产生一个自身对象，只能调用静态变量。//static主要用于控制范围，加了static他适用于类的成员，不适用于对象的成员。
 }; 
+}
 int main(int argc, char** argv){
-	Something *st=Something::create(123),*st1=st->create(321);//考点，调用的是哪个构造函数 //create属于全部的对象//st->(create)是否正确？
+	myspace::Something *st=myspace::Something::create(123),*st1=st->create(321);//考点，调用的是哪个构造函数 //create属于全部的对象//st->(create)是否正确？
 	st.show();//是哪一个类的show()函数
 	st1.show();
 	return 0;
