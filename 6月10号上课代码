@@ -32,7 +32,7 @@ int main(int argc, char** argv){
 //Warning，可以不进行处理，编译器给出的警告。
 //Error,不得不处理的错误
 //Execption,(异常)
-int main(){
+float Something(){
 float x=0,y=0;
 if(y!=0){
 float z=x/y;
@@ -40,7 +40,16 @@ float z=x/y;
 else{
 throw 8;
 }
+return z;
+}
+int main(){
+try{
+float z=Something();
+}
+catch(int n){
+if(n==8)
+std::cout<<"ZERO DIVISION"<<endl;
+}
 return 0;
 }
-
 
