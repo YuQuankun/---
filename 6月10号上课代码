@@ -38,18 +38,20 @@ if(y!=0){
 float z=x/y;
 }
 else{
-throw 8;
+throw 8;//抛出异常,抛出类型为int型。
 }
 return z;
 }
 int main(){
-try{
+try{//实现代码块
 float z=Something();
 }
-catch(int n){
+catch(int n){//抓取异常，抓取类型为int型。
 if(n==8)
 std::cout<<"ZERO DIVISION"<<endl;
 }
+catch(...){
+}//抓取所有的异常类型。
 return 0;
 }
 
