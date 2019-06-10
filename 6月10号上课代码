@@ -36,8 +36,10 @@ int main(){
 float x=0,y=0;
 if(y!=0){
 float z=x/y;
-}else
-????
+}
+else{
+throw 8;
+}
 return 0;
 }
 
