@@ -9,15 +9,15 @@ class Something:public Bigthing{
 		~Something(){
 		}
 		virtual void show() const{	
-		}
+		}//只能读，不能写。
 		virtual void show(){
 		} 
-    static Something* create(int n){
+    static Something* create(int n){//计算机如何看待static，人怎么看待static。
     return new Something(n);
-    }//提供了构造的方法，可以产生一个自身对象，只能调用静态变量。
+    }//提供了构造的方法，可以产生一个自身对象，只能调用静态变量。//static主要用于控制范围，加了static他适用于类的成员，不适用于对象的成员。
 }; 
 int main(int argc, char** argv){
-	Something *st=Something::create(123),*st1=Something::create(321);//考点，调用的是哪个构造函数 //create属于全部的对象
+	Something *st=Something::create(123),*st1=st->create(321);//考点，调用的是哪个构造函数 //create属于全部的对象//st->(create)是否正确？
 	st.show();//是哪一个类的show()函数
 	st1.show();
 	return 0;
