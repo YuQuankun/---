@@ -11,14 +11,13 @@ class Something:public Bigthing{
 		virtual void show() const{	
 		}
 		virtual void show(){
-			
 		} 
     static Something* create(int n){
     return new Something(n);
-    }//提供了构造的方法
+    }//提供了构造的方法，可以产生一个自身对象，只能调用静态变量。
 }; 
 int main(int argc, char** argv){
-	Something *st=Something::create(123),*st1=Something::create(321);//考点，调用的是哪个构造函数 
+	Something *st=Something::create(123),*st1=Something::create(321);//考点，调用的是哪个构造函数 //create属于全部的对象
 	st.show();//是哪一个类的show()函数
 	st1.show();
 	return 0;
