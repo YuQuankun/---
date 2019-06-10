@@ -34,11 +34,11 @@ int main(int argc, char** argv){
 //Execption,(异常)
 int main(){
 float x=0,y=0;
-try{
+if(y!=0){
 float z=x/y;
-}
-catch(Execption &e){
-}
+}else
+????
+return 0;
 }
 
 
