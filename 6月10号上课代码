@@ -26,3 +26,17 @@ int main(int argc, char** argv){
 	st1.show();
 	return 0;
 }
+/*
+异常代码
+*/
+//Warning，可以不进行处理，编译器给出的警告。
+//Error,不得不处理的错误
+//Execption,(异常)
+int main(){
+float x=0,y=0;
+try{
+float z=x/y;
+}
+catch(Execption &e){
+}
+}
